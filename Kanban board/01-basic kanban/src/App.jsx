@@ -1,5 +1,6 @@
 import "./App.css";
 import Board from "./components/Board/Board";
+import Editable from "./components/Editable/Editable";
 
 function App() {
 	return (
@@ -12,8 +13,13 @@ function App() {
 				<div className="app_board">
 					<Board />
 					<Board />
-					<Board />
-					<Board />
+					<div className="app_boards_board">
+						<Editable
+							displayClass="boards_cards_add"
+							text="Add board"
+							placeholder="Enter card title"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

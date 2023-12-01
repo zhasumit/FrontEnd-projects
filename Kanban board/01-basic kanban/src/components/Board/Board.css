@@ -11,6 +11,10 @@
     display: flex;
 }
 
+.board_top_more {
+    position: relative  ;
+}
+
 .board_top_title {
     flex: 1;
     display: flex;

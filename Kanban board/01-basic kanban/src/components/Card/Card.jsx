@@ -4,7 +4,6 @@ import Chips from "../Chips/Chips";
 function Card() {
 	return (
 		<div className="card">
-			<div className="card_title">asdfasddff asdf a sddf asddf </div>
 			<div className="card_top">
 				<div className="card_top_labels">
 					<Chips text="Sumit" color="green" />
@@ -12,6 +11,7 @@ function Card() {
 				</div>
 				<MoreHorizontal />
 			</div>
+			<div className="card_title">asdfasddff asdf a sddf asddf </div>
 			<div className="card_footer">
 				<p>
 					<Clock /> 30 Nov
