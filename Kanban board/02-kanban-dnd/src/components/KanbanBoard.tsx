@@ -7,6 +7,9 @@ import {
 	DragEndEvent,
 	DragOverlay,
 	DragStartEvent,
+	PointerSensor,
+	useSensor,
+	useSensors,
 } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import { createPortal } from "react-dom";
@@ -16,6 +19,17 @@ function KanbanBoard() {
 	const columsId = useMemo(() => columns.map((col) => col.id), [columns]);
 
 	const [activeColumn, setActiveColumn] = useState<Column | null>(null);
+
+	// New Hook to sense the delete button from overall dragability
+	const sensors = useSensors(
+		useSensor(PointerSensor, {
+			activationConstraint: {
+				distance: 3,
+				// 3px lag allowed
+			},
+		})
+	);
+
 	return (
 		<div
 			className=" 
@@ -29,7 +43,11 @@ function KanbanBoard() {
 				px-[40px]"
 		>
 			{/* add context of dragging */}
-			<DndContext onDragStart={onDragStart} onDragEnd={onDragEnd}>
+			<DndContext
+				sensors={sensors}
+				onDragStart={onDragStart}
+				onDragEnd={onDragEnd}
+			>
 				<div className="m-auto flex gap-4">
 					<div className="flex gap-4">
 						<SortableContext items={columsId}>
