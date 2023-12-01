@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import PlusIcon from "../icons/PlusIcon";
-import { Column } from "../types";
+import { Column, Id } from "../types";
 import ColumnContainer from "./ColumnContainer";
 import {
 	DndContext,
@@ -56,6 +56,7 @@ function KanbanBoard() {
 									key={col.id}
 									column={col}
 									deleteColumn={deleteColumn}
+									updateColumn={updateColumn}
 								/>
 							))}
 						</SortableContext>
@@ -88,6 +89,7 @@ function KanbanBoard() {
 							<ColumnContainer
 								column={activeColumn}
 								deleteColumn={deleteColumn}
+								updateColumn={updateColumn}
 							/>
 						)}
 					</DragOverlay>,
@@ -135,6 +137,15 @@ function KanbanBoard() {
 			return arrayMove(columns, activeColumnIndex, overColumnIndex);
 		});
 	}
+
+	function updateColumn(id: Id, title: string) {
+		const newColumns = columns.map((col) => {
+			if (col.id !== id) return col;
+			return { ...col, title };
+		});
+		setColumns(newColumns);
+	}
+
 	function deleteColumn(id: Id) {
 		const filteredColumns = columns.filter((col) => col.id !== id);
 		setColumns(filteredColumns);
