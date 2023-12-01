@@ -12,20 +12,48 @@ interface Props {
 function ColumnContainer(props: Props) {
 	const { column, deleteColumn } = props;
 
-	const { setNodeRef, attributes, listeners, transform, transition } =
-		useSortable({
-			id: column.id,
-			data: {
-				type: "Column",
-				column,
-			},
-		});
+	const {
+		setNodeRef,
+		attributes,
+		listeners,
+		transform,
+		transition,
+		isDragging,
+	} = useSortable({
+		id: column.id,
+		data: {
+			type: "Column",
+			column,
+		},
+	});
 
 	const style = {
 		transition,
 		transform: CSS.Transform.toString(transform),
 	};
 
+	if (isDragging) {
+		{
+			/* Making a custom UI for drag time */
+			return (
+				<div
+					ref={setNodeRef}
+					style={style}
+					className=" 
+                    bg-coloumnBackgroundColor 
+                    opacity-50
+                    w-[300px]
+                    h-[500px]
+                    rounded-md
+                    flex
+                    flex-col
+                    border-2
+                    border-blue-500/30
+                    "
+				></div>
+			);
+		}
+	}
 	return (
 		<div
 			ref={setNodeRef}
