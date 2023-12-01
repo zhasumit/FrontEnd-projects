@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import PlusIcon from "../icons/PlusIcon";
-import { Column, Id } from "../types";
+import { Column, Id, Task } from "../types";
 import ColumnContainer from "./ColumnContainer";
 import {
 	DndContext,
@@ -17,6 +17,8 @@ import { createPortal } from "react-dom";
 function KanbanBoard() {
 	const [columns, setColumns] = useState<Column[]>([]);
 	const columsId = useMemo(() => columns.map((col) => col.id), [columns]);
+
+	const [tasks, setTasks] = useState<Task[]>([]);
 
 	const [activeColumn, setActiveColumn] = useState<Column | null>(null);
 
@@ -57,6 +59,11 @@ function KanbanBoard() {
 									column={col}
 									deleteColumn={deleteColumn}
 									updateColumn={updateColumn}
+									createTask={createTask}
+									tasks={tasks.filter(
+										(task) => task.columnId === col.id
+									)}
+									deleteTask={deleteTask}
 								/>
 							))}
 						</SortableContext>
@@ -74,9 +81,16 @@ function KanbanBoard() {
 					border-2  
 					items-center
 					border-coloumnBackgroundColor 
-					p-2 ring-blue-500/3 hover:ring-2
+					p-2 ring-green-500/3 hover:ring-2
 					flex
-					gap-2"
+					gap-2
+					 hover:bg-gray-900
+					hover:text-green-400
+					hover:border-green-950
+					active:bg-gray-950
+					border-x-coloumnBackgroundColor
+
+					"
 					>
 						<PlusIcon />
 						Add Coloumn
@@ -90,6 +104,11 @@ function KanbanBoard() {
 								column={activeColumn}
 								deleteColumn={deleteColumn}
 								updateColumn={updateColumn}
+								createTask={createTask}
+								tasks={tasks.filter(
+									(task) => task.columnId === activeColumn.id
+								)}
+								deleteTask={deleteTask}
 							/>
 						)}
 					</DragOverlay>,
@@ -136,6 +155,20 @@ function KanbanBoard() {
 
 			return arrayMove(columns, activeColumnIndex, overColumnIndex);
 		});
+	}
+
+	function createTask(columnId: Id) {
+		const newTask: Task = {
+			id: generateId(),
+			columnId,
+			content: `Task ${tasks.length + 1}`,
+		};
+		setTasks([...tasks, newTask]);
+	}
+
+	function deleteTask(id: Id) {
+		const newTasks = tasks.filter((task) => task.id !== id);
+		setTasks(newTasks);
 	}
 
 	function updateColumn(id: Id, title: string) {
