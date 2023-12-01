@@ -1,5 +1,7 @@
 import TrashIcon from "../icons/TrashIcon";
 import { Column, Id } from "../types";
+import { useSortable } from "@dnd-kit/sortable/";
+import { CSS } from "@dnd-kit/utilities";
 
 // properties of the col container
 interface Props {
@@ -9,8 +11,25 @@ interface Props {
 
 function ColumnContainer(props: Props) {
 	const { column, deleteColumn } = props;
+
+	const { setNodeRef, attributes, listeners, transform, transition } =
+		useSortable({
+			id: column.id,
+			data: {
+				type: "Column",
+				column,
+			},
+		});
+
+	const style = {
+		transition,
+		transform: CSS.Transform.toString(transform),
+	};
+
 	return (
 		<div
+			ref={setNodeRef}
+			style={style}
 			className=" 
         bg-coloumnBackgroundColor 
         w-[300px]
@@ -21,7 +40,10 @@ function ColumnContainer(props: Props) {
         "
 		>
 			{/* Title */}
+			{/* since we wanna drag the col container  */}
 			<div
+				{...attributes}
+				{...listeners}
 				className="
                 bg-gray-950
                 h-[60px]
