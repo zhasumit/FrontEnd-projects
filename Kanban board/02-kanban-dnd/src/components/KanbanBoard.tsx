@@ -5,6 +5,7 @@ import ColumnContainer from "./ColumnContainer";
 import {
 	DndContext,
 	DragEndEvent,
+	DragOverEvent,
 	DragOverlay,
 	DragStartEvent,
 	PointerSensor,
@@ -51,6 +52,7 @@ function KanbanBoard() {
 				sensors={sensors}
 				onDragStart={onDragStart}
 				onDragEnd={onDragEnd}
+				onDragOver={onDragOver}
 			>
 				<div className="m-auto flex gap-4">
 					<div className="flex gap-4">
@@ -150,6 +152,9 @@ function KanbanBoard() {
 	}
 
 	function onDragEnd(event: DragEndEvent) {
+		setActiveColumn(null);
+		setActiveTask(null);
+		
 		const { active, over } = event;
 		if (!over) return;
 		const activeColumnId = active.id;
@@ -170,6 +175,29 @@ function KanbanBoard() {
 
 			return arrayMove(columns, activeColumnIndex, overColumnIndex);
 		});
+	}
+
+	function onDragOver(event: DragOverEvent) {
+		const { active, over } = event;
+		if (!over) return;
+		const activeId = active.id;
+		const overId = over.id;
+
+		if (activeId === overId) return;
+
+		const isActiveAtask = active.data.current?.type === "Task";
+		const isOverAtask = over.data.current?.type === "Task";
+
+		// task over another task
+		if (isActiveAtask && isOverAtask) {
+			setTasks((tasks) => {
+				const activeIndex = tasks.findIndex((t) => t.id === activeId);
+				const overIndex = tasks.findIndex((t) => t.id === overId);
+
+				return arrayMove(tasks, activeIndex, overIndex);
+			});
+		}
+		// task over another coloumn
 	}
 
 	function createTask(columnId: Id) {
