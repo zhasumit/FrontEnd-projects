@@ -1,6 +1,6 @@
 function Footer() {
 	return (
-		<section className="relative overflow-hidden bg-gray-900 text-white py-[20px]">
+		<section className="relative overflow-hidden bg-gray-900 text-white py-[10px]">
 			<div className="container relative z-10 mx-auto px-4">
 				<div className="-m-8 flex flex-wrap items-center justify-between">
 					<div className="w-auto p-8">
@@ -83,7 +83,7 @@ function Footer() {
 							</div>
 							<div className="w-auto p-1.5">
 								<a
-									href="https://github.com/zhasumit"
+									href="mailto:sumitzha2057@gmail.com"
 									target="_blank"
 								>
 									<div className="flex h-8 w-8 items-center justify-center ">
@@ -121,7 +121,10 @@ function Footer() {
 								</a>
 							</div>
 							<div className="w-auto p-1.5">
-								<a href="#">
+								<a
+									href="https://www.instagram.com/sumit__zha/"
+									target="_blank"
+								>
 									<div className="flex h-8 w-8 items-center justify-center ">
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +242,7 @@ function Footer() {
 							</div>
 							<div className="w-auto p-1.5">
 								<a
-									href="https://www.facebook.com/profile.php?id=61554362732156"
+									href="https://www.linkedin.com/in/sumitzha/"
 									target="_blank"
 								>
 									<div className="flex h-8 w-8 items-center justify-center ">

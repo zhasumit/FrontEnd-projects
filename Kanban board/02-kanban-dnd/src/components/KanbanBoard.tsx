@@ -40,7 +40,7 @@ function KanbanBoard() {
 			className=" 
 				m-auto 
 				flex 
-				min-h-[90.4vh] 
+				min-h-[93vh] 
 				w-full 
 				items-center 
 				overflow-x-auto 
