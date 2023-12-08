@@ -64,6 +64,7 @@ function KanbanBoard() {
 										(task) => task.columnId === col.id
 									)}
 									deleteTask={deleteTask}
+									updateTask={updateTask}
 								/>
 							))}
 						</SortableContext>
@@ -84,7 +85,7 @@ function KanbanBoard() {
 					p-2 ring-green-500/3 hover:ring-2
 					flex
 					gap-2
-					 hover:bg-gray-900
+					hover:bg-gray-900
 					hover:text-green-400
 					hover:border-green-950
 					active:bg-gray-950
@@ -109,6 +110,7 @@ function KanbanBoard() {
 									(task) => task.columnId === activeColumn.id
 								)}
 								deleteTask={deleteTask}
+								updateTask={updateTask}
 							/>
 						)}
 					</DragOverlay>,
@@ -168,6 +170,14 @@ function KanbanBoard() {
 
 	function deleteTask(id: Id) {
 		const newTasks = tasks.filter((task) => task.id !== id);
+		setTasks(newTasks);
+	}
+
+	function updateTask(id: Id, content: string) {
+		const newTasks = tasks.map((task) => {
+			if (task.id !== id) return task;
+			return { ...task, content };
+		});
 		setTasks(newTasks);
 	}
 
