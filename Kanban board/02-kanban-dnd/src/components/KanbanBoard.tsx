@@ -40,7 +40,7 @@ function KanbanBoard() {
 			className=" 
 				m-auto 
 				flex 
-				min-h-screen 
+				min-h-[90.4vh] 
 				w-full 
 				items-center 
 				overflow-x-auto 
@@ -154,7 +154,7 @@ function KanbanBoard() {
 	function onDragEnd(event: DragEndEvent) {
 		setActiveColumn(null);
 		setActiveTask(null);
-		
+
 		const { active, over } = event;
 		if (!over) return;
 		const activeColumnId = active.id;
@@ -188,16 +188,29 @@ function KanbanBoard() {
 		const isActiveAtask = active.data.current?.type === "Task";
 		const isOverAtask = over.data.current?.type === "Task";
 
+		if (!isActiveAtask) return;
+
 		// task over another task
 		if (isActiveAtask && isOverAtask) {
 			setTasks((tasks) => {
 				const activeIndex = tasks.findIndex((t) => t.id === activeId);
 				const overIndex = tasks.findIndex((t) => t.id === overId);
 
+				tasks[activeIndex].columnId = tasks[overIndex].columnId;
 				return arrayMove(tasks, activeIndex, overIndex);
 			});
 		}
+
+		const isOverAColumn = over.data.current?.type === "Column";
 		// task over another coloumn
+		if (isActiveAtask && isOverAColumn) {
+			setTasks((tasks) => {
+				const activeIndex = tasks.findIndex((t) => t.id === activeId);
+
+				tasks[activeIndex].columnId = overId;
+				return arrayMove(tasks, activeIndex, activeIndex); // for array renderr of the tasks
+			});
+		}
 	}
 
 	function createTask(columnId: Id) {
@@ -233,6 +246,9 @@ function KanbanBoard() {
 	function deleteColumn(id: Id) {
 		const filteredColumns = columns.filter((col) => col.id !== id);
 		setColumns(filteredColumns);
+
+		const newTasks = tasks.filter((t) => t.columnId !== id);
+		setTasks(newTasks);
 	}
 	function generateId() {
 		return Math.floor(Math.random() * 10001);

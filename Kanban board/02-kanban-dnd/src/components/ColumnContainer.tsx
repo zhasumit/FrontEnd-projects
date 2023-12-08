@@ -84,8 +84,8 @@ function ColumnContainer(props: Props) {
 			className=" 
         bg-coloumnBackgroundColor 
         w-[300px]
-        h-[500px]
-        rounded-md
+        h-[600px]
+        rounded-lg
         flex
         flex-col
         "
@@ -114,20 +114,6 @@ function ColumnContainer(props: Props) {
             "
 			>
 				<div className="flex gap-2">
-					<div
-						className="
-                    flex
-                    justify-center
-                    items-center
-                    bg-coloumnBackgroundColor
-                    px-2
-                    py-1
-                    text-sm
-                    rounded-md
-                "
-					>
-						0
-					</div>
 					{!editMode && column.title}
 					{editMode && (
 						<input
