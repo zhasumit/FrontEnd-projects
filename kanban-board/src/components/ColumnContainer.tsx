@@ -66,7 +66,7 @@ function ColumnContainer(props: Props) {
                     bg-coloumnBackgroundColor 
                     opacity-50
                     w-[300px]
-                    h-[500px]
+                    h-[600px]
                     rounded-md
                     flex
                     flex-col

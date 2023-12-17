@@ -1,6 +1,6 @@
 function Contact() {
 	return (
-		<div className="h-[90.4vh]">
+		<div className="h-[93vh]">
 			<div className="mx-auto max-w-7xl px-4 ">
 				<div className="mx-auto max-w-7xl py-12 md:py-24">
 					<div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
@@ -81,7 +81,7 @@ function Contact() {
 										<textarea
 											className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
 											id="message"
-											placeholder="Leave us a message"
+											placeholder="Leave a message"
 											cols={3}
 										></textarea>
 									</div>

@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom";
+
 function Footer() {
 	return (
-		<section className="relative overflow-hidden bg-gray-900 text-white py-[10px]">
+		<section className="relative overflow-hidden bg-gray-900 text-white py-[10px] h-[7vh]">
 			<div className="container relative z-10 mx-auto px-4">
 				<div className="-m-8 flex flex-wrap items-center justify-between">
 					<div className="w-auto p-8">
-						<a href="#">
+						<NavLink to="/">
 							<div className="inline-flex items-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -23,37 +25,37 @@ function Footer() {
 									/>
 								</svg>
 								<span className="ml-4 text-lg font-bold">
-									Kanban
+									DragBoard
 								</span>
 							</div>
-						</a>
+						</NavLink>
 					</div>
 					<div className="w-auto p-8">
 						<ul className="-m-5 flex flex-wrap items-center">
 							<li className="p-5">
-								<a
-									className="font-medium text-white-600  hover:text-blue-200"
-									href="#"
+								<NavLink
+									to="/about"
+									className={({ isActive }) =>
+										`block py-2 pr-4 pl-3 ${
+											isActive
+												? "text-blue-500"
+												: "text-white-600"
+										} duration-200 font-medium   hover:text-blue-200`
+									}
 								>
 									About
-								</a>
+								</NavLink>
 							</li>
+							{/*
+								|
 							<li className="p-5">
 								<a
 									className="font-medium text-white-600 hover:text-blue-200"
 									href="#"
 								>
-									Terms of Service
+									Contact
 								</a>
-							</li>
-							<li className="p-5">
-								<a
-									className="font-medium text-white-600 hover:text-blue-200"
-									href="#"
-								>
-									Contact Us
-								</a>
-							</li>
+							</li> */}
 						</ul>
 					</div>
 
@@ -216,7 +218,7 @@ function Footer() {
 							</div>
 							<div className="w-auto p-1.5">
 								<a
-									href="https://www.facebook.com/profile.php?id=61554362732156"
+									href="https://www.facebook.com/profile.php?id=100016599376777"
 									target="_blank"
 								>
 									<div className="flex h-8 w-8 items-center justify-center ">
@@ -268,7 +270,7 @@ function Footer() {
 							</div>
 							<div className="w-auto p-1.5">
 								<a
-									href="https://www.facebook.com/profile.php?id=61554362732156"
+									href="https://discord.gg/p75n8u8D"
 									target="_blank"
 								>
 									<div className="flex h-8 w-8 items-center justify-center ">
