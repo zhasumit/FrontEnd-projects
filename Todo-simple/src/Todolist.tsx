@@ -21,6 +21,14 @@ function Todolist() {
 			})
 		);
 	};
+
+	const [input, setInput] = useState<string>("");
+
+	const handleAdd = () => {
+		const newTodo: item = { id: Date.now(), text: input, completed: false };
+		setTodos([...todos, newTodo]);
+	};
+
 	return (
 		<div className="todolist-main-container">
 			<h1>To do List </h1>
@@ -40,8 +48,12 @@ function Todolist() {
 					</li>
 				))}
 			</ul>
-			<input type="text" placeholder="Add item" />
-			<button>➕</button>
+			<input
+				type="text"
+				placeholder="Add item"
+				onChange={(e) => setInput(e.currentTarget.value)}
+			/>
+			<button onClick={handleAdd}>➕</button>
 		</div>
 	);
 }
