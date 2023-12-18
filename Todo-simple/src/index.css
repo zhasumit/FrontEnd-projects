@@ -28,8 +28,15 @@ body {
   display: flex;
   place-items: center;
   justify-content: center;
+  text-align: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.btns {
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -49,7 +56,8 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: #1a1a1a;
-
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 input {
@@ -75,4 +83,47 @@ button:hover {
 li {
   font-size: 1.1em;
   line-height: 1.8;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: "💣 ";
+}
+
+#blue {
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #96a4dc;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+#blue:hover {
+  background-color: #7f8dc2;
+}
+
+#pink {
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #be9ca7;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+#pink:hover {
+  background-color: #d389a2;
 }
