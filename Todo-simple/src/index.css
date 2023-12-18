@@ -45,9 +45,11 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #cecff7;
+  background-color: #89db7d;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #1a1a1a;
+
 }
 
 input {
@@ -66,8 +68,8 @@ input {
 }
 
 button:hover {
-  border-color: #646cff;
-  background-color: rgb(137, 202, 141)
+  background-color: #89db7d;
+  background-color: #79c36d;
 }
 
 li {
