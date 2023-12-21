@@ -1,6 +1,8 @@
 import "./Board.css";
 import { getChar } from "../../helper.js";
 import React from "react";
+import Rank from "./bits/Rank.jsx";
+import Files from "./bits/Files.jsx";
 
 function Board() {
 	const ranks = Array(8)
@@ -16,9 +18,10 @@ function Board() {
 		c += (i + j) % 2 === 0 ? " tile--light" : " tile--dark";
 		return c;
 	};
-    
+
 	return (
 		<div className="board">
+			<Rank ranks={ranks} />
 			<div className="tiles">
 				{ranks.map((rank, i) =>
 					files.map((file, j) => (
@@ -32,6 +35,7 @@ function Board() {
 					))
 				)}
 			</div>
+			<Files files={files} />
 		</div>
 	);
 }
