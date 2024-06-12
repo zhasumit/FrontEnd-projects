@@ -19,7 +19,7 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: #d5e7ff;
+  background: radial-gradient(#10171e, #223141, #22313f);
   gap: 14px;
 }
 
