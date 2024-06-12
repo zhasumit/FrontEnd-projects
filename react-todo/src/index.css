@@ -19,7 +19,8 @@ button {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: radial-gradient(#10171e, #223141, #22313f);
+  background: rgb(0, 20, 93);
+  background: radial-gradient(circle, rgba(0, 20, 93, 1) 32%, rgba(40, 9, 121, 1) 87%, rgba(95, 0, 174, 1) 100%);
   gap: 14px;
 }
 
