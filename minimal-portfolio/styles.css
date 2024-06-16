@@ -6,6 +6,7 @@
     --link-bgcolor: #222237;
     --link-underline: #ea64d9;
     --link-bgcolor-hover: #363656;
+    scroll-behavior: smooth;
 }
 
 ::selection {
@@ -453,5 +454,50 @@ tr th:first-child {
 
     .long-icon {
         height: 40px;
+    }
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 60px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--link-bgcolor);
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 200ms;
+}
+
+#myBtn:hover {
+    background-color: var(--link-bgcolor-hover);
+}
+
+#myBtn>img {
+    height: 50px;
+}
+
+@media (max-width: 750px) {
+    #myBtn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    #myBtn>img {
+        height: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    #myBtn {
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #myBtn>img {
+        height: 25px;
     }
 }

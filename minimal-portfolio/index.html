@@ -66,13 +66,16 @@
                 <p></p>
             </div>
             <div class="right">
-                <a href="#"><img src="./images/icons/leetcode.svg"></a>
-                <a href="#"><img src="./images/icons/Github-Dark.svg"></a>
-                <a href="#"><img src="./images/icons/LinkedIn.svg"></a>
-                <a href="#"><img style="border-radius: 100%;" src="./images/icons/mail.png"></a>
-                <a href="#"><img src="./images/icons/twitter.png"></a>
-                <a href="#"><img src="./images/icons/Instagram.svg"></a>
-                <a href="#"><img src="./images/small icon.png"></a>
+                <a href="https://leetcode.com/u/sumitzha/" target="_blank"><img src="./images/icons/leetcode.svg"></a>
+                <a href="https://github.com/zhasumit/" target="_blank"><img src="./images/icons/Github-Dark.svg"></a>
+                <a href="https://www.linkedin.com/in/sumitzha/" target="_blank"><img
+                        src="./images/icons/LinkedIn.svg"></a>
+                <a href="mailto:sumitjha2057@gmail.com"><img style="border-radius: 100%;"
+                        src="./images/icons/mail.png"></a>
+                <a href="https://x.com/Sumit_JhaG" target="_blank"><img src="./images/icons/twitter.png"></a>
+                <a href="https://www.instagram.com/sumitk.jha/" target="_blank"><img
+                        src="./images/icons/Instagram.svg"></a>
+                <a href="https://sumitjha.vercel.app/" target="_blank"><img src="./images/small icon.png"></a>
             </div>
             <p class="aboutMe">hi<img src="./images/hi.gif">,
                 I'm Sumit, a recent graduate from MNNIT Allahabad. I have exposure to various frameworks,
@@ -267,9 +270,32 @@
             </div>
 
         </section>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <img src="./images/icons/up.png">
+        </button>
     </main>
 
 
 </body>
+
+<script>
+
+    let mybutton = document.getElementById("myBtn");
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
 
 </html>
