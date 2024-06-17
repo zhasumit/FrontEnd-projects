@@ -4,13 +4,14 @@
     --bg-color: #0d0d15;
     --link-color: #82deff;
     --link-bgcolor: #222237;
-    --link-underline: #ea64d9;
+    --link-underline: #c58af9;
     --link-bgcolor-hover: #363656;
     scroll-behavior: smooth;
 }
 
 ::selection {
-    background: #5269d0;
+    /* background: #5269d0; */
+    background: #2f4a69;
 }
 
 * {
@@ -23,6 +24,7 @@
 }
 
 body {
+    letter-spacing: -.2px;
     background: var(--bg-color);
     color: var(--primary-color);
     min-height: 100vh;
@@ -39,7 +41,6 @@ body {
 h1 {
     padding-top: 30px;
     font-size: 40px;
-    color: var(--secondary-color);
 }
 
 h2 {
@@ -48,6 +49,10 @@ h2 {
     gap: 10px;
     font-size: 30px;
     color: var(--secondary-color);
+}
+
+header>a {
+    border: none;
 }
 
 #activityImg {
@@ -112,7 +117,7 @@ a {
 nav a:hover,
 nav a:focus {
     color: var(--link-color);
-    border-bottom: 4px solid indianred;
+    border-bottom: 4px solid var(--link-underline);
 }
 
 main,
@@ -245,7 +250,7 @@ p>img {
 
 .outreach:hover {
     color: var(--link-color);
-    border-bottom: 4px solid indianred;
+    border-bottom: 4px solid var(--link-underline);
 }
 
 
@@ -337,8 +342,6 @@ tr th:first-child {
     flex: 1;
 }
 
-
-
 .projectLink {
     display: flex;
     gap: 5px;
@@ -349,7 +352,7 @@ tr th:first-child {
 
 .projectLink:hover {
     color: var(--link-color);
-    border-bottom: 4px solid indianred;
+    border-bottom: 4px solid var(--link-underline);
 }
 
 .projectItem>div:last-child {
@@ -500,4 +503,35 @@ tr th:first-child {
     #myBtn>img {
         height: 25px;
     }
+}
+
+.aboutSection {
+    color: #dde1e7;
+    line-height: 1.75em;
+    letter-spacing: -.3px;
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+}
+
+.aboutSection p {
+    margin-bottom: 10px;
+}
+
+.aboutSection h1 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.aboutSection h2 {
+    color: white;
+    font-size: 21px;
+    margin-top: 12px ;
+    margin-bottom: 10px ;
+    letter-spacing: 1.9px;
+    font-weight: 400;
+}
+
+#link-arrow{
+    height: 15px;
 }
