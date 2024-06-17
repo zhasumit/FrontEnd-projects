@@ -112,12 +112,13 @@ a {
     padding-bottom: 4px;
 }
 
-
+nav > a{
+    padding: 4px 5px;
+}
 
 nav a:hover,
 nav a:focus {
-    color: var(--link-color);
-    border-bottom: 4px solid var(--link-underline);
+    border-bottom: 3px solid var(--link-underline);
 }
 
 main,
@@ -129,7 +130,7 @@ section,
 
 main {
     gap: 50px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 }
 
 section {
@@ -345,14 +346,14 @@ tr th:first-child {
 .projectLink {
     display: flex;
     gap: 5px;
+    padding: 3px 5px;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
 }
 
 .projectLink:hover {
-    color: var(--link-color);
-    border-bottom: 4px solid var(--link-underline);
+    border-bottom: 2.5px solid var(--link-underline);
 }
 
 .projectItem>div:last-child {
@@ -523,15 +524,79 @@ tr th:first-child {
     margin-bottom: 25px;
 }
 
+.aboutSection a {
+    font-size: inherit;
+}
+
 .aboutSection h2 {
     color: white;
     font-size: 21px;
-    margin-top: 12px ;
-    margin-bottom: 10px ;
+    margin-top: 12px;
+    margin-bottom: 10px;
     letter-spacing: 1.9px;
     font-weight: 400;
 }
 
-#link-arrow{
+#link-arrow {
     height: 15px;
+}
+
+ul {
+    padding-left: 40px;
+}
+
+.large {
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+.userManualSection {
+    color: #dde1e7;
+    line-height: 1.75em;
+    letter-spacing: .7px;
+}
+
+.userManualSection h1 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.userManualSection a {
+    font-size: inherit;
+}
+
+.userManualSection h2 {
+    color: white;
+    font-size: 21px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 400;
+}
+
+.quote {
+    padding: 12px;
+    padding-left: 50px;
+    border-left: 6px solid steelblue;
+    background-color: #17181e;
+    margin-bottom: 8px;
+}
+
+.quoteright > em{
+    display: flex;
+    justify-content: end;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+#send-message{
+    border: none;
+    border-radius: 100%;
+    height: 27px;
+    margin-right: 3px;
 }
