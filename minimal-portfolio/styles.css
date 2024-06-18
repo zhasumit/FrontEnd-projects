@@ -57,9 +57,7 @@ header>a {
 
 #activityImg {
     height: 40px;
-    border: 1.5px double var(--secondary-color);
-    border-radius: 100%;
-    padding: 4px;
+    padding: 1px;
 }
 
 h3 {
@@ -85,7 +83,7 @@ p {
 
 header {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
     gap: 14px;
 }
@@ -594,9 +592,8 @@ li {
     font-size: 12px;
 }
 
-#send-message{
+.icon{
     border: none;
-    border-radius: 100%;
     height: 27px;
     margin-right: 3px;
 }
