@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 
 const NoteInput = (props) => {
-    const { handleAddNotes } = props;
-    const [Note, setNote] = useState("")
+    const { handleAddNotes, Note, setNote } = props;
     return (
         <header>
             <textarea className=' text-gray-900  text-base tracking-wide rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus w-60 h-64' placeholder='Enter todo...' value={Note} onChange={(e) => {

@@ -11,26 +11,32 @@ const Foreground = () => {
         return colors[randomIndex];
     }
 
-    const [data, setData] = useState(["Note1", "Note2", "Three", "Four"])
+    const [dragNotes, setDragNotes] = useState([])
+    const [Note, setNote] = useState("")
 
     function handleAddNotes(newNote) {
-        const newNoteList = [...data, newNote];
-        setData(newNoteList);
+        const newNoteList = [...dragNotes, newNote];
+        setDragNotes(newNoteList);
     }
 
     function handleDeleteNotes(index) {
-        const newNotesList = data.filter((note, noteIndex) => {
+        const newNotesList = dragNotes.filter((note, noteIndex) => {
             return noteIndex !== index;
         })
-        setData(newNotesList);
+        setDragNotes(newNotesList);
     }
-    function handleEditNotes(index) { }
+
+    function handleEditNotes(index) {
+        const noteToBeEdited = dragNotes[index]
+        setNote(noteToBeEdited)
+        handleDeleteNotes(index)
+    }
 
     return (
         <div ref={ref} className='fixed p-3 top-0 left-0 z-[3] w-full h-full flex gap-3.5 flex-wrap'>
-            <NoteInput handleAddNotes={handleAddNotes} />
-            {data.map((item, index) => (
-                <Card data={item} tagcolor={getColor()} reference={ref} index={index} handleDeleteNotes={handleDeleteNotes} />
+            <NoteInput handleAddNotes={handleAddNotes} Note={Note} setNote={setNote} />
+            {dragNotes.map((item, index) => (
+                <Card dragNotes={item} tagcolor={getColor()} reference={ref} index={index} handleDeleteNotes={handleDeleteNotes} handleEditNotes={handleEditNotes}/>
             ))}
         </div>
     )

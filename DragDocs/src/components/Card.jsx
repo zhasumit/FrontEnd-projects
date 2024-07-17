@@ -1,13 +1,9 @@
 import React from 'react'
-import { MdOutlineCloseFullscreen } from "react-icons/md";
+import { BiCollapseAlt } from "react-icons/bi";
+import { RiEdit2Line } from "react-icons/ri";
 import { motion } from 'framer-motion'
 
-function Card({ data, tagcolor, reference, handleDeleteNotes, index }) {
-  function getColor() {
-    let colors = (['gray', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emrald', 'teal', 'cyan', 'sky', 'Blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'])
-    const randomIndex = Math.floor(Math.random() * colors.length + 1);
-    return colors[randomIndex];
-  }
+function Card({ dragNotes, tagcolor, reference, handleDeleteNotes, index, handleEditNotes }) {
 
   return (
     <>
@@ -53,12 +49,14 @@ function Card({ data, tagcolor, reference, handleDeleteNotes, index }) {
                                           "bg-pink-400" :
                                           "bg-rose-400"
           }`}>
-          <div className='absolute right-2 top-3 bg-zinc-600 rounded-full h-6 w-6 flex items-center content-center justify-center hover:text-amber-100 hover:bg-rose-400 ' >
-            <button className='rounded-full' onClick={() => { handleDeleteNotes(index) }}><MdOutlineCloseFullscreen /></button>
+          <div>
+            <button className='absolute right-2 top-3 rounded-full bg-zinc-600 rounded-full h-6 w-6 flex items-center content-center justify-center hover:text-rose-500 hover:bg-rose-200' onClick={() => { handleDeleteNotes(index) }}><BiCollapseAlt /></button>
+            <button className='bg-zinc-600 rounded-full h-6 w-6 flex items-center content-center justify-center hover:text-blue-500 hover:bg-sky-200 absolute right-10 text-lg top-3 rounded-full' onClick={() => { handleEditNotes(index) }}><RiEdit2Line /></button>
           </div>
+
         </div>
         <p className='text-[15px] leading-tighter tracking-wide mt-5'>
-          {data}
+          {dragNotes}
         </p>
       </motion.div >
     </>
