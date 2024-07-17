@@ -1,5 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Card from './Card'
+import NoteInput from './NoteInput';
 
 const Foreground = () => {
     const ref = useRef(null);
@@ -10,25 +11,26 @@ const Foreground = () => {
         return colors[randomIndex];
     }
 
-    const data = [
-        {
-            desc: "This is a sample note to be checked in the card component that is in a different component altogether",
-            tagcolor: getColor(),
-        },
-        {
-            desc: "Note 2",
-            tagcolor: getColor(),
-        },
-        {
-            desc: "Note 3",
-            tagcolor: getColor(),
-        },
-    ]
+    const [data, setData] = useState(["Note1", "Note2", "Three", "Four"])
+
+    function handleAddNotes(newNote) {
+        const newNoteList = [...data, newNote];
+        setData(newNoteList);
+    }
+
+    function handleDeleteNotes(index) {
+        const newNotesList = data.filter((note, noteIndex) => {
+            return noteIndex !== index;
+        })
+        setData(newNotesList);
+    }
+    function handleEditNotes(index) { }
 
     return (
-        <div ref={ref} className='fixed p-3 top-0 left-0 z-[3] w-full h-full flex gap-5 flex-wrap'>
+        <div ref={ref} className='fixed p-3 top-0 left-0 z-[3] w-full h-full flex gap-3.5 flex-wrap'>
+            <NoteInput handleAddNotes={handleAddNotes} />
             {data.map((item, index) => (
-                <Card data={item} reference={ref} />
+                <Card data={item} tagcolor={getColor()} reference={ref} index={index} handleDeleteNotes={handleDeleteNotes} />
             ))}
         </div>
     )
