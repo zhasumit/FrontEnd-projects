@@ -13,7 +13,7 @@ function Card({ dragNotes, tagcolor, reference, handleDeleteNotes, index, handle
         whileDrag={{ scale: 1.05 }}
         dragElastic={0.1}
         dragTransition={{ bounceStiffness: 100, bounceDamping: 30 }}
-        className='relative flex-shrink-0 w-60 h-72 rounded-[13px] bg-zinc-900/80 text-white px-3 py-4 overflow-hidden'>
+        className='relative flex-shrink-0 w-60 h-72 rounded-[13px] bg-zinc-900/80 text-white px-3 py-4 overflow-hidden max-h-[500px]'>
         <div className={`w-full h-[6px] absolute left-0 top-0 flex
          ${tagcolor === "blue" ?
             "bg-blue-400" :
@@ -59,6 +59,7 @@ function Card({ dragNotes, tagcolor, reference, handleDeleteNotes, index, handle
           {dragNotes}
         </p>
       </motion.div >
+     
     </>
   )
 }

@@ -10,5 +10,23 @@
 }
 
 ::selection {
-  color: #f29831;
+  color: #c7f8ff;
+  background-color: #627de86a;
+}
+
+*::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #627de8;
+}
+
+*::-webkit-scrollbar-thumb
+{
+  cursor: default;
+	background-color: #627de8;
 }
