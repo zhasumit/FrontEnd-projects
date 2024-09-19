@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <button class="theme-switch">
+        <span title="darkmode">🌘</span>
+        <span title="lightmode">🔅</span>
+    </button>
     <header>
         <!-- <img class="long-icon" src="./images/long icon.png"> -->
         <a href="https://sumitjha.vercel.app/">
@@ -24,14 +28,13 @@
         </a>
         <nav>
             <a class="darkerText" href="./about.html">About</a>
-            <a class="darkerText" href="./document/Sumit_Jha_SDE1.pdf"" target=" _blank">Resume</a>
+            <a class="darkerText" href="./document/Sumit_Jha_SDE1.pdf" target=" _blank">Resume</a>
         </nav>
     </header>
     <main>
         <section>
             <div class="userManualSection">
-                <h1>User Manual</h1>
-                <p>
+                <h1 style="margin-bottom: -40px;">User Manual</h1>
                 <h2><img class="icon" src="./images/icons/overview.gif">OVERVIEW</h2>
                 <ul>
                     <li><strong class="large">5-3-1 Enneagram:</strong> Investigator, Achiever, and
@@ -43,9 +46,6 @@
                         I think this
                         description is a solid one.</li>
                 </ul>
-                </p>
-            </div>
-            <div class="userManualSection">
                 <p>
                 <h2 id="large"><img class="icon" src="./images/icons/up.gif"> STRENGTHS</h2>
                 <ul>
@@ -61,8 +61,6 @@
                         iterate at a pretty quick pace.
                     </li>
                     </p>
-            </div>
-            <div class="userManualSection">
                 <p>
                 <h2 id="large"><img class="icon" src="./images/icons/down.gif"> WEAKNESSES</h2>
                 <ul>
@@ -79,8 +77,6 @@
                         means I spread myself too thin.
                     </li>
                     </p>
-            </div>
-            <div class="userManualSection">
                 <p>
                 <h2><img class="icon" src="./images/icons/bookmark.gif">PRINCIPLES</h2>
                 <ul>
@@ -114,24 +110,31 @@
                         Without this time, I feel like a machine.
                     </li>
                     </p>
-            </div>
-            <div class="userManualSection">
                 <h2><img class="icon" src="./images/icons/quotes.gif"> FAVORITE QUOTES</h2>
                 <div class="quote">
                     yesterday is a history. tomorrow is a mystery. today is a gift. That's why it's called the present
-                    <div class=quoteright>
+                    <div class="quoteright">
                         <em>- Master Oogway</em>
                     </div>
                 </div>
                 <div class="quote">
-                    Leave tomorrow's problems to tomorrow's you.
-                    <div class=quoteright>
-                        <em>- One Punch Man</em>
+                   A man is great not because he hasn't failed; a man is great because failure hasn't stopped him.
+                    <div class="quoteright">
+                        <em>- Confucius</em>
                     </div>
                 </div>
-            </div>
-
-            <div class="userManualSection">
+                <div class="quote">
+                    We suffer more in imagination than in reality
+                    <div class="quoteright">
+                        <em>- Seneca</em>
+                    </div>
+                </div>
+                <div class="quote">
+                    You will not be punished for your anger, you will be punished by your anger. Nothing can harm you as much as your own thoughts unguarded.
+                    <div class="quoteright">
+                        <em>- Gautam Buddha</em>
+                    </div>
+                </div>
                 <h2><img class="icon" src="./images/icons/send-message.gif" style="border-radius: 100%;">GET IN TOUCH</h2>
                 <p>If you want to get in touch, I'm most responsive over <a href="mailto:sumitjha2057@gmail.com"
                         target="_blank">email</a> and I tend to be pretty active on
@@ -140,11 +143,11 @@
             </div>
         </section>
         <button onclick="topFunction()" id="myBtn" title="Go to top">
-            <img src="./images/icons/up.png">
+            ↪
         </button>
     </main>
 
-
+    <script type="text/javaScript" src="darkmode.js" defer></script>
 </body>
 
 <script>
