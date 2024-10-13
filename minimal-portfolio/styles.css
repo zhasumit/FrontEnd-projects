@@ -212,14 +212,14 @@ li {
     right: 40px;
     z-index: 99;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 18px;
     border-radius: 100%;
     cursor: pointer;
     transition: all 200ms;
     font-weight: 600;
-    rotate: -90deg;
     color: var(--text-color);
     background-color: var(--base-variant);
+    font-size: 1.7em;
 }
 
 #myBtn:hover {
@@ -385,6 +385,8 @@ li {
     #myBtn {
         bottom: 20px;
         right: 20px;
+        font-size: 1.2em;
+        padding: 5px 13px;
     }
 
     #myBtn > img {
@@ -415,8 +417,7 @@ li {
     }
 
     .info {
-        margin-top: 4em;
-        height: 25em;
+        height: 23em;
         flex-direction: column;
         align-items: center;
     }
@@ -426,6 +427,7 @@ li {
     }
 
     .introSection {
+        font-size: 1.8em;
         padding-left: 0;
         width: 100%;
     }
@@ -449,6 +451,9 @@ li {
 }
 
 @media (max-width: 500px) {
+    .info {
+        height: 21em;
+    }
     #myBtn {
         bottom: 10px;
         right: 15px;
@@ -482,12 +487,10 @@ li {
     }
 
     .introSection {
+        font-size: 1.5em;
         margin-top: 10px;
     }
 
-    .info {
-        margin-bottom: 5em;
-    }
     .socials img {
         height: 1.7em;
     }
