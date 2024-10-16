@@ -420,6 +420,7 @@ li {
         height: 23em;
         flex-direction: column;
         align-items: center;
+        margin-top: 2em;
     }
 
     .profileImage img {
