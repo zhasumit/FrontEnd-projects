@@ -156,13 +156,13 @@ li {
 
 .large {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.23em;
     margin-right: 0.2em;
-    padding: 3px 5px;
+    padding: 2px 0px;
     background: linear-gradient(
         to bottom,
-        var(--base-variant) 30%,
-        var(--highlight) 100%
+        var(--base-variant) 65%,
+        var(--highlight) 0%
     );
 }
 
@@ -358,11 +358,15 @@ li {
 }
 
 .projectHeading h3 {
-    padding: 0 0.1em;
+    font-weight: 500;
+    font-size: 1.23em;
+    margin-right: 0.2em;
+    margin-bottom: .2em;
+    padding: 0px 3px;
     background: linear-gradient(
         to bottom,
-        var(--base-variant) 30%,
-        var(--highlight) 100%
+        var(--base-variant) 60%,
+        var(--highlight) 0%
     );
 }
 
