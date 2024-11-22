@@ -235,7 +235,7 @@ li {
 .profileImage img {
     height: 100%;
     border-radius: 50%;
-    padding: 5px;
+    padding: 3px;
     background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
 }
 
@@ -268,7 +268,7 @@ li {
 }
 
 .socials img {
-    height: 2em;
+    height: 1.7em;
 }
 
 .tech img {
